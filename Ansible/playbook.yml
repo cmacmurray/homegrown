@@ -1,4 +1,4 @@
-- hosts: node1
+- hosts: all 
   sudo: yes
   sudo_user: root
   gather_facts: true
@@ -95,3 +95,17 @@
           exit 0
         args:
           executable: /bin/bash
+      - name: change Kberetes cgroup-driver to 'cgroupfs'
+        warn: false
+        shell:  |
+          sed -i 's/cgroup-driver=systemd/cgroup-driver=cgroupfs/g' /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+        args:
+          executable: /bin/bash
+      - name: Reload systemd
+        shell:  |
+          systemctl daemon-reload
+        args:
+          executable: /bin/bash
+
+
+
