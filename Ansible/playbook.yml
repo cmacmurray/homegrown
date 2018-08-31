@@ -1,7 +1,0 @@
----
-- name Installs Kubernetes and Configures Cluster
-  hosts: all
-  becomes: true
-  roles: 
-    - role: common
-    - role: configure_master

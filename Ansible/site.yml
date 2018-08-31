@@ -1,0 +1,14 @@
+---
+- name: Configure Centos Kubernets Cluster
+  hosts: all
+  sudo: yes
+  sudo_user: root
+  roles:
+    - common
+
+- name: Configure Kubernetes Master
+  hosts: node1
+  sudo: yes
+  sudo_user: root
+  roles:
+   - configure_master

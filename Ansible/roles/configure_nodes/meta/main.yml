@@ -1,0 +1,3 @@
+---
+dependiencies:
+- { configure_masterr:, kubeadm_output }
