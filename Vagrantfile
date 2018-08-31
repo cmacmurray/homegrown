@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
       vb.name = "node1"
     end
     node1.vm.provision "ansible" do |ansible|
-      ansible.playbook = "playbook.yml"
+      ansible.playbook = "Ansible/playbook.yml"
     end
   end
 end
