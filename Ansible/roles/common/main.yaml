@@ -106,15 +106,6 @@
           systemctl daemon-reload
         args:
           executable: /bin/bash
-- hosts: node1 
-  sudo: yes
-  sudo_user: root
-  gather_facts: true
-  tasks:
-      - name: Initalize Cluster Return Token
-        shell: |
-          kubeadm init --apiserver-advertise-address=172.17.8.101 --pod-network-cidr=10.244.0.0/16
-        register: kubeadm_output
 
 
 
